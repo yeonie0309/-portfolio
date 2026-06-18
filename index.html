@@ -510,6 +510,10 @@
             display: block;
             filter: drop-shadow(0 0 6px rgba(0,0,0,0.4));
         }
+        .tech-ico[src*="github"],
+        .tech-ico[src*="notion"] {
+            filter: invert(1) drop-shadow(0 0 6px rgba(0,0,0,0.4));
+        }
         .tech-dot {
             display: inline-flex;
             align-items: center;
@@ -524,6 +528,39 @@
         }
         /* 로고 이미지가 있으면 모노그램 점은 숨김 (fallback 시 JS가 다시 표시) */
         .tech-ico + .tech-dot { display: none; }
+
+        /* ---------- history ---------- */
+        .history-list {
+            position: relative;
+            display: grid;
+            gap: 14px;
+            list-style: none;
+        }
+        .history-item {
+            display: grid;
+            grid-template-columns: minmax(130px, 0.34fr) 1fr;
+            gap: 18px;
+            padding: 18px 22px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            transition: transform 0.3s, border-color 0.3s, background 0.3s;
+        }
+        .history-item:hover {
+            transform: translateY(-4px);
+            border-color: var(--border-strong);
+            background: var(--surface-strong);
+        }
+        .history-date {
+            font-family: var(--font-display);
+            font-size: 0.82rem;
+            letter-spacing: 0.08em;
+            color: var(--accent-2);
+        }
+        .history-title {
+            color: var(--text);
+            font-weight: 500;
+        }
 
         /* ---------- contact ---------- */
         .contact-card {
@@ -540,11 +577,20 @@
             text-decoration: none;
             color: var(--text);
             font-size: 0.95rem;
-            padding: 13px 22px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 13px 18px;
             border-radius: 12px;
             border: 1px solid var(--border-strong);
             background: rgba(0,0,0,0.25);
             transition: transform 0.25s, background 0.25s, border-color 0.25s, color 0.25s;
+        }
+        .contact-list a span { overflow-wrap: anywhere; }
+        .contact-list svg {
+            width: 19px;
+            height: 19px;
+            flex-shrink: 0;
         }
         .contact-list a:hover {
             transform: translateY(-3px);
@@ -576,6 +622,7 @@
             .hero-grid { grid-template-columns: 1fr; gap: 40px; }
             .about-layout { grid-template-columns: 1fr; }
             .project-grid, .stack-panel { grid-template-columns: 1fr; }
+            .history-item { grid-template-columns: 1fr; gap: 6px; }
             .nav-links {
                 position: fixed;
                 top: 78px; left: 50%;
@@ -622,6 +669,7 @@
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
             <a href="#stack">Stack</a>
+            <a href="#history">History</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
@@ -706,11 +754,13 @@
                     <div class="about-card reveal">
                         <h3>What I Value</h3>
                         <ul>
-                            <li>사용자 흐름을 먼저 이해하는 개발</li>
-                            <li>기획 의도를 구조로 옮기는 설계</li>
+                            <li>사용자의 흐름을 먼저 이해하는 개발</li>
+                            <li>기획의 의도를 구조로 옮기는 설계</li>
                             <li>피드백을 빠르게 반영하는 태도</li>
+                            <li>데이터 흐름을 안정적으로 설계하는 습관</li>
+                            <li>함께 묻고 배우며 성장하는 협업</li>
+                            <li>구현 이후의 경험까지 살피는 책임감</li>
                             <li>팀의 속도와 분위기를 함께 맞추는 협업</li>
-                            <li>맡은 흐름이 끝까지 자연스럽게 이어질 때까지 살피는 책임감</li>
                         </ul>
                     </div>
                 </div>
@@ -799,9 +849,14 @@
                         <h3>Backend</h3>
                         <div class="tech-list">
                             <span class="tech"><img class="tech-ico" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="" onerror="techFallback(this,'J')"><span class="tech-dot">J</span>Java</span>
+                            <span class="tech"><img class="tech-ico" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="" onerror="techFallback(this,'P')"><span class="tech-dot">P</span>Python</span>
+                            <span class="tech"><img class="tech-ico" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="" onerror="techFallback(this,'C')"><span class="tech-dot">C</span>C</span>
+                            <span class="tech"><img class="tech-ico" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="" onerror="techFallback(this,'C')"><span class="tech-dot">C</span>C++</span>
                             <span class="tech"><img class="tech-ico" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="" onerror="techFallback(this,'S')"><span class="tech-dot">S</span>Spring Boot</span>
                             <span class="tech"><span class="tech-dot">R</span>REST API</span>
                             <span class="tech"><img class="tech-ico" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/hibernate/hibernate-original.svg" alt="" onerror="techFallback(this,'J')"><span class="tech-dot">J</span>JPA</span>
+                            <span class="tech"><img class="tech-ico" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="" onerror="techFallback(this,'M')"><span class="tech-dot">M</span>MySQL</span>
+                            <span class="tech"><span class="tech-dot">O</span>OAuth Login</span>
                         </div>
                     </div>
                     <div class="stack-group reveal">
@@ -810,6 +865,7 @@
                             <span class="tech"><img class="tech-ico" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="" onerror="techFallback(this,'H')"><span class="tech-dot">H</span>HTML</span>
                             <span class="tech"><img class="tech-ico" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="" onerror="techFallback(this,'C')"><span class="tech-dot">C</span>CSS</span>
                             <span class="tech"><img class="tech-ico" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="" onerror="techFallback(this,'J')"><span class="tech-dot">J</span>JavaScript</span>
+                            <span class="tech"><img class="tech-ico" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="" onerror="techFallback(this,'R')"><span class="tech-dot">R</span>React</span>
                             <span class="tech"><span class="tech-dot">R</span>Responsive UI</span>
                         </div>
                     </div>
@@ -817,8 +873,13 @@
                         <h3>Tools</h3>
                         <div class="tech-list">
                             <span class="tech"><img class="tech-ico" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="" onerror="techFallback(this,'G')"><span class="tech-dot">G</span>Git</span>
+                            <span class="tech"><img class="tech-ico" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="" onerror="techFallback(this,'G')"><span class="tech-dot">G</span>GitHub</span>
                             <span class="tech"><img class="tech-ico" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gradle/gradle-original.svg" alt="" onerror="techFallback(this,'G')"><span class="tech-dot">G</span>Gradle</span>
                             <span class="tech"><img class="tech-ico" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg" alt="" onerror="techFallback(this,'I')"><span class="tech-dot">I</span>IntelliJ IDEA</span>
+                            <span class="tech"><img class="tech-ico" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="" onerror="techFallback(this,'V')"><span class="tech-dot">V</span>VSCode</span>
+                            <span class="tech"><img class="tech-ico" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/notion/notion-original.svg" alt="" onerror="techFallback(this,'N')"><span class="tech-dot">N</span>Notion</span>
+                            <span class="tech"><span class="tech-dot">D</span>Discord</span>
+                            <span class="tech"><img class="tech-ico" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg" alt="" onerror="techFallback(this,'S')"><span class="tech-dot">S</span>Slack</span>
                             <span class="tech"><img class="tech-ico" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="" onerror="techFallback(this,'F')"><span class="tech-dot">F</span>Figma</span>
                         </div>
                     </div>
@@ -826,10 +887,45 @@
             </div>
         </section>
 
-        <section class="section" id="contact">
+        <section class="section" id="history">
             <div class="wrap">
                 <div class="section-heading reveal">
                     <p class="section-index">04</p>
+                    <h2>My History</h2>
+                </div>
+                <ul class="history-list">
+                    <li class="history-item reveal">
+                        <span class="history-date">2023.03</span>
+                        <span class="history-title">한국외국어대학교 글로벌캠퍼스 입학</span>
+                    </li>
+                    <li class="history-item reveal">
+                        <span class="history-date">2023.03 ~ 2023.12</span>
+                        <span class="history-title">한국외대 자유전공학부 학생회</span>
+                    </li>
+                    <li class="history-item reveal">
+                        <span class="history-date">2025.03 ~ 2025.12</span>
+                        <span class="history-title">한국외대 자유전공학부 학생회</span>
+                    </li>
+                    <li class="history-item reveal">
+                        <span class="history-date">2025.06 ~ ing</span>
+                        <span class="history-title">Algorithm Study Lead</span>
+                    </li>
+                    <li class="history-item reveal">
+                        <span class="history-date">2025.10 ~ 2026.04</span>
+                        <span class="history-title">Spring Boot Session</span>
+                    </li>
+                    <li class="history-item reveal">
+                        <span class="history-date">2026.03 ~ ing</span>
+                        <span class="history-title">UMC 10기 Spring Boot Part</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section" id="contact">
+            <div class="wrap">
+                <div class="section-heading reveal">
+                    <p class="section-index">05</p>
                     <h2>Contact</h2>
                 </div>
                 <div class="contact-card reveal">
@@ -837,6 +933,24 @@
                         함께 만드는 과정에서 정확한 소통과 빠른 피드백을 중요하게 생각합니다.
                         프로젝트와 협업에 관한 이야기도 열린 태도로 듣고, 필요한 내용을 책임감 있게 이어가겠습니다.
                     </p>
+                    <div class="contact-list">
+                        <a href="tel:010-8799-7754" aria-label="전화번호 010-8799-7754">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.91.33 1.8.63 2.65a2 2 0 0 1-.45 2.11L8.09 9.69a16 16 0 0 0 6.22 6.22l1.21-1.2a2 2 0 0 1 2.11-.45c.85.3 1.74.51 2.65.63A2 2 0 0 1 22 16.92z"/></svg>
+                            <span>010-8799-7754</span>
+                        </a>
+                        <a href="mailto:llieeynn137@gmail.com" aria-label="메일 llieeynn137@gmail.com">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                            <span>llieeynn137@gmail.com</span>
+                        </a>
+                        <a href="https://github.com/yeonie0309" target="_blank" rel="noreferrer" aria-label="깃허브 yeonie0309">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5A12 12 0 0 0 8.21 23.9c.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.08 1.83 2.82 1.3 3.51.99.11-.78.42-1.3.76-1.6-2.66-.3-5.46-1.33-5.46-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.4 11.4 0 0 1 6.01 0c2.29-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.62-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .5z"/></svg>
+                            <span>github.com/yeonie0309</span>
+                        </a>
+                        <a href="https://discord.com/" target="_blank" rel="noreferrer" aria-label="디스코드 아이디 llieeynn137">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.32 4.37A19.8 19.8 0 0 0 15.36 2c-.21.38-.46.9-.63 1.3a18.4 18.4 0 0 0-5.49 0A13 13 0 0 0 8.6 2a19.7 19.7 0 0 0-4.96 2.38C.5 9.06-.35 13.62.07 18.12A20 20 0 0 0 6.16 21.2c.49-.67.93-1.38 1.3-2.12-.72-.27-1.41-.6-2.05-.98.17-.13.34-.26.5-.4a14.2 14.2 0 0 0 12.18 0l.5.4c-.65.38-1.33.71-2.06.98.37.74.81 1.45 1.3 2.12a20 20 0 0 0 6.1-3.08c.5-5.21-.84-9.73-3.61-13.75ZM8.02 15.36c-1.19 0-2.16-1.09-2.16-2.43s.95-2.43 2.16-2.43c1.2 0 2.18 1.1 2.16 2.43 0 1.34-.96 2.43-2.16 2.43Zm7.96 0c-1.19 0-2.16-1.09-2.16-2.43s.95-2.43 2.16-2.43c1.2 0 2.18 1.1 2.16 2.43 0 1.34-.95 2.43-2.16 2.43Z"/></svg>
+                            <span>llieeynn137</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
