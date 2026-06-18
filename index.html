@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yeonie — Portfolio</title>
-    <meta name="description" content="개발자 포트폴리오 웹사이트">
+    <meta name="description" content="서비스의 흐름과 구조를 고민하는 백엔드 개발자 이가연 포트폴리오">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -624,11 +624,11 @@
     <header class="hero">
         <div class="wrap hero-grid">
             <section class="hero-copy reveal">
-                <p class="eyebrow">PORTFOLIO / SPRING BOOT / 2026</p>
-                <h1>깔끔한 구현보다<br><span class="hl">기억에 남는 경험</span>을<br>만드는 개발자입니다.</h1>
+                <p class="eyebrow">BACKEND PORTFOLIO / 2026</p>
+                <h1>사용자의 경험이 오래 남을 수 있도록,<br><span class="hl">서비스의 흐름과 구조</span>를<br>함께 고민하는 개발자</h1>
                 <p class="hero-text">
-                    사용자 관점의 흐름을 먼저 설계하고, 그 위에 안정적인 백엔드와 선명한 인터페이스를 쌓습니다.
-                    이 페이지는 당신의 이름, 프로젝트, 링크만 바꾸면 바로 개인 포트폴리오로 사용할 수 있게 구성했습니다.
+                    기능을 빠르게 완성하는 것에 앞서, 사용자가 어떤 흐름으로 서비스를 만나고 기억하게 될지 먼저 생각합니다.
+                    기획의 의도가 안정적인 구조와 자연스러운 사용 경험으로 이어지도록 차분하게 구현하는 백엔드 개발자를 지향합니다.
                 </p>
                 <div class="hero-actions">
                     <a class="button primary" href="#projects">프로젝트 보기 →</a>
@@ -638,7 +638,6 @@
 
             <aside class="profile-card reveal">
                 <div class="profile-photo">
-                    <!-- 프로필 사진: src를 본인 이미지 경로로 교체하세요 (예: profile.jpg) -->
                     <img src="profile.jpg" alt="프로필 사진"
                          onerror="this.style.display='none';this.parentElement.classList.add('no-img');">
                     <span class="profile-initial">이</span>
@@ -687,16 +686,19 @@
                 <div class="about-layout">
                     <div class="about-card accent reveal">
                         <p>
-                            안녕하세요. 문제를 빠르게 구현하는 것에서 끝나지 않고, 왜 이 기능이 필요한지까지 함께 고민하는 개발자입니다.
-                            실용적인 기술 선택, 읽기 쉬운 코드, 오래 유지할 수 있는 구조를 중요하게 생각합니다.
+                            Spring Boot 기반의 백엔드 개발을 공부하며, 기능이 서비스 안에서 어떤 의미를 갖는지 먼저 이해하려고 합니다.
+                            사용자의 행동이 자연스럽게 이어지고, 팀의 기획 의도가 화면과 데이터 흐름 속에서 흐려지지 않도록 구조를 고민합니다.
+                            아직 채워가야 할 부분이 많지만, 맡은 일은 끝까지 책임지고 더 나은 방향을 찾아가며 성장하고 있습니다.
                         </p>
                     </div>
                     <div class="about-card reveal">
                         <h3>What I Value</h3>
                         <ul>
-                            <li>명확한 사용자 경험</li>
-                            <li>유지보수 가능한 구조</li>
-                            <li>기획과 구현 사이의 연결</li>
+                            <li>사용자 흐름을 먼저 이해하는 개발</li>
+                            <li>기획 의도를 구조로 옮기는 설계</li>
+                            <li>피드백을 빠르게 반영하는 태도</li>
+                            <li>팀의 속도와 분위기를 함께 맞추는 협업</li>
+                            <li>맡은 흐름이 끝까지 자연스럽게 이어질 때까지 살피는 책임감</li>
                         </ul>
                     </div>
                 </div>
@@ -714,12 +716,11 @@
                         <p class="project-tag">Project 01</p>
                         <h3>Commerce Admin Dashboard</h3>
                         <p>
-                            주문, 정산, 재고 흐름을 한 화면에서 볼 수 있도록 설계한 관리자 시스템.
-                            데이터 조회 속도와 운영 편의성을 함께 개선했습니다.
+                            운영자가 필요한 정보를 빠르게 파악하고 다음 행동으로 이어갈 수 있도록 흐름을 정리한 관리자 서비스입니다.
+                            데이터 구조와 화면의 사용 맥락이 어긋나지 않도록 설계 방향을 맞춰갔습니다.
                         </p>
                         <div class="project-foot">
-                            <span class="project-stack">Spring Boot / JPA / MySQL</span>
-                            <!-- PDF: href를 업로드한 파일 경로로 교체하세요 -->
+                            <span class="project-stack">Backend Flow / Data Structure</span>
                             <a class="pdf-link" href="docs/project-01.pdf" target="_blank" rel="noreferrer">
                                 <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
                                 PDF 보기
@@ -730,12 +731,11 @@
                         <p class="project-tag">Project 02</p>
                         <h3>Reservation Web Platform</h3>
                         <p>
-                            예약 과정의 이탈을 줄이기 위해 단계별 UX를 단순화한 웹 서비스.
-                            사용자 행동 흐름에 맞춰 화면과 API를 함께 설계했습니다.
+                            사용자가 망설임 없이 다음 단계로 이동할 수 있도록 예약 과정을 단순하고 명확하게 다듬은 웹 서비스입니다.
+                            프론트엔드와의 연결 지점을 함께 확인하며 자연스러운 서비스 흐름을 만드는 데 집중했습니다.
                         </p>
                         <div class="project-foot">
-                            <span class="project-stack">Java / REST API / JavaScript</span>
-                            <!-- PDF: href를 업로드한 파일 경로로 교체하세요 -->
+                            <span class="project-stack">Service Flow / Team Collaboration</span>
                             <a class="pdf-link" href="docs/project-02.pdf" target="_blank" rel="noreferrer">
                                 <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
                                 PDF 보기
@@ -746,12 +746,11 @@
                         <p class="project-tag">Project 03</p>
                         <h3>Personal Branding Site</h3>
                         <p>
-                            프로젝트, 소개, 연락 수단을 한 페이지에 응축한 개인 포트폴리오.
-                            강한 첫인상과 빠른 전달력을 목표로 제작했습니다.
+                            개발자로서의 태도와 작업 방식을 한눈에 전달하기 위해 구성한 개인 포트폴리오입니다.
+                            정보의 우선순위를 정리하고, 방문자가 자연스럽게 읽어 내려갈 수 있는 흐름을 고민했습니다.
                         </p>
                         <div class="project-foot">
-                            <span class="project-stack">Spring Boot / HTML / CSS</span>
-                            <!-- PDF: href를 업로드한 파일 경로로 교체하세요 -->
+                            <span class="project-stack">Portfolio Strategy / UI Flow</span>
                             <a class="pdf-link" href="docs/project-03.pdf" target="_blank" rel="noreferrer">
                                 <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
                                 PDF 보기
@@ -808,13 +807,9 @@
                 </div>
                 <div class="contact-card reveal">
                     <p>
-                        아래 정보는 예시입니다. 실제 이메일, GitHub, 블로그 링크로 바꾸면 바로 사용할 수 있습니다.
+                        함께 만드는 과정에서 정확한 소통과 빠른 피드백을 중요하게 생각합니다.
+                        프로젝트와 협업에 관한 이야기도 열린 태도로 듣고, 필요한 내용을 책임감 있게 이어가겠습니다.
                     </p>
-                    <div class="contact-list">
-                        <a href="mailto:your.email@example.com">your.email@example.com</a>
-                        <a href="https://github.com/your-github" target="_blank" rel="noreferrer">github.com/your-github</a>
-                        <a href="https://your-site.example.com" target="_blank" rel="noreferrer">your-site.example.com</a>
-                    </div>
                 </div>
             </div>
         </section>
