@@ -49,6 +49,17 @@
             overflow: hidden;
             pointer-events: none;
         }
+        .bg-fx::before {
+            content: "";
+            position: absolute;
+            inset: -20%;
+            background:
+                linear-gradient(130deg, rgba(124,92,255,0.12), transparent 34%),
+                linear-gradient(250deg, rgba(25,227,192,0.10), transparent 42%),
+                linear-gradient(15deg, rgba(255,93,143,0.08), transparent 38%);
+            filter: blur(34px);
+            opacity: 0.7;
+        }
         .bg-grid {
             position: fixed;
             inset: 0;
