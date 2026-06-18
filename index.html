@@ -202,17 +202,17 @@
             margin-bottom: 26px;
         }
         .hero h1 .hl {
-            background: linear-gradient(110deg, var(--accent), #8f77ff 36%, #9b8aff 48%, var(--accent-2) 62%, var(--accent));
-            background-size: 220% 100%;
+            background: linear-gradient(110deg, var(--accent), var(--accent-3) 38%, var(--accent-2) 62%, var(--accent-3), var(--accent));
+            background-size: 240% 100%;
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            filter: drop-shadow(0 0 8px rgba(25, 227, 192, 0.16));
-            animation: titleSheen 5.8s ease-in-out infinite;
+            filter: drop-shadow(0 0 7px rgba(124, 92, 255, 0.14));
+            animation: titleFlow 6.2s ease-in-out infinite;
         }
-        @keyframes titleSheen {
-            0%, 22% { background-position: 100% 50%; }
-            48%, 100% { background-position: 0% 50%; }
+        @keyframes titleFlow {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
         }
         .hero-text { color: var(--muted); font-size: 1.05rem; max-width: 540px; margin-bottom: 36px; }
 
