@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yeonie — Portfolio</title>
+    <title>Gayeon Lee — Portfolio</title>
     <meta name="description" content="서비스의 흐름과 구조를 고민하는 백엔드 개발자 이가연 포트폴리오">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -571,6 +571,7 @@
             text-align: center;
         }
         .contact-card > p { color: #d8d4f5; max-width: 600px; margin: 0 auto 32px; }
+        .contact-card > p:empty { display: none; }
         .contact-list { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
         .contact-list a {
             font-family: var(--font-display);
@@ -661,7 +662,7 @@
 
 <div class="page-shell">
     <nav class="topbar" id="topbar">
-        <div class="brand">YEONIE</div>
+        <div class="brand">GAYEON LEE</div>
         <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
         </button>
@@ -678,14 +679,14 @@
         <div class="wrap hero-grid">
             <section class="hero-copy reveal">
                 <p class="eyebrow">BACKEND PORTFOLIO / 2026</p>
-                <h1>사용자의 경험이 오래 남을 수 있도록,<br><span class="hl">서비스의 흐름과 구조</span>를<br>함께 고민하는 개발자</h1>
+                <h1>사용자의 경험이<br>오래 남을 수 있도록,<br><span class="hl">서비스의 흐름과 구조</span>를<br>함께 고민하는 개발자</h1>
                 <p class="hero-text">
                     기능을 빠르게 완성하는 것에 앞서, 사용자가 어떤 흐름으로 서비스를 만나고 기억하게 될지 먼저 생각합니다.
                     기획의 의도가 안정적인 구조와 자연스러운 사용 경험으로 이어지도록 차분하게 구현하는 백엔드 개발자를 지향합니다.
                 </p>
                 <div class="hero-actions">
-                    <a class="button primary" href="#projects">프로젝트 보기 →</a>
-                    <a class="button secondary" href="#contact">연락하기</a>
+                    <a class="button primary" href="#projects">View Projects →</a>
+                    <a class="button secondary" href="#contact">Contact</a>
                 </div>
             </section>
 
@@ -701,15 +702,15 @@
                 </div>
                 <ul class="profile-info">
                     <li>
-                        <span class="info-label">학교</span>
+                        <span class="info-label">University</span>
                         <span class="info-value">한국외국어대학교</span>
                     </li>
                     <li>
-                        <span class="info-label">전공</span>
+                        <span class="info-label">Major</span>
                         <span class="info-value">컴퓨터공학부</span>
                     </li>
                     <li>
-                        <span class="info-label">생년월일</span>
+                        <span class="info-label">Birth</span>
                         <span class="info-value">2003.03.09</span>
                     </li>
                     <li>
@@ -717,12 +718,12 @@
                         <span class="info-value">ESTJ</span>
                     </li>
                     <li>
-                        <span class="info-label">Base</span>
-                        <span class="info-value">Seoul / Remote</span>
+                        <span class="info-label">Location</span>
+                        <span class="info-value">Seoul</span>
                     </li>
                     <li>
-                        <span class="info-label">Status</span>
-                        <span class="info-value status-on"><span class="status-dot"></span>협업 가능</span>
+                        <span class="info-label">Email</span>
+                        <span class="info-value">llieeynn137@gmail.com</span>
                     </li>
                 </ul>
             </aside>
@@ -900,11 +901,11 @@
                     </li>
                     <li class="history-item reveal">
                         <span class="history-date">2023.03 ~ 2023.12</span>
-                        <span class="history-title">한국외대 자유전공학부 학생회</span>
+                        <span class="history-title">한국외대 자유전공학부 제 1대 학생회 집행부원</span>
                     </li>
                     <li class="history-item reveal">
                         <span class="history-date">2025.03 ~ 2025.12</span>
-                        <span class="history-title">한국외대 자유전공학부 학생회</span>
+                        <span class="history-title">한국외대 자유전공학부 제 3대 학생회 복지국장</span>
                     </li>
                     <li class="history-item reveal">
                         <span class="history-date">2025.06 ~ ing</span>
@@ -929,10 +930,6 @@
                     <h2>Contact</h2>
                 </div>
                 <div class="contact-card reveal">
-                    <p>
-                        함께 만드는 과정에서 정확한 소통과 빠른 피드백을 중요하게 생각합니다.
-                        프로젝트와 협업에 관한 이야기도 열린 태도로 듣고, 필요한 내용을 책임감 있게 이어가겠습니다.
-                    </p>
                     <div class="contact-list">
                         <a href="tel:010-8799-7754" aria-label="전화번호 010-8799-7754">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.91.33 1.8.63 2.65a2 2 0 0 1-.45 2.11L8.09 9.69a16 16 0 0 0 6.22 6.22l1.21-1.2a2 2 0 0 1 2.11-.45c.85.3 1.74.51 2.65.63A2 2 0 0 1 22 16.92z"/></svg>
@@ -956,8 +953,8 @@
         </section>
 
         <footer class="footer wrap">
-            <div class="brand">YEONIE</div>
-            <span>© 2026 Yeonie. Designed &amp; built with care.</span>
+            <div class="brand">GAYEON LEE</div>
+            <span>© 2026 Gayeon Lee. Designed &amp; built with care.</span>
         </footer>
     </main>
 </div>
