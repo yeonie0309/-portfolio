@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gayeon Lee — Portfolio</title>
-    <meta name="description" content="서비스의 흐름과 구조를 고민하는 백엔드 개발자 이가연 포트폴리오">
+    <title>Yeonie — Portfolio</title>
+    <meta name="description" content="개발자 포트폴리오 웹사이트">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -202,17 +202,10 @@
             margin-bottom: 26px;
         }
         .hero h1 .hl {
-            background: linear-gradient(110deg, var(--accent), var(--accent-3) 38%, var(--accent-2) 62%, var(--accent-3), var(--accent));
-            background-size: 240% 100%;
+            background: linear-gradient(110deg, var(--accent), var(--accent-3) 50%, var(--accent-2));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            filter: drop-shadow(0 0 7px rgba(124, 92, 255, 0.14));
-            animation: titleFlow 6.2s ease-in-out infinite;
-        }
-        @keyframes titleFlow {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
         }
         .hero-text { color: var(--muted); font-size: 1.05rem; max-width: 540px; margin-bottom: 36px; }
 
@@ -279,7 +272,6 @@
         .profile-photo img {
             width: 100%; height: 100%;
             object-fit: cover;
-            object-position: center 38%;
             border-radius: 50%;
             display: block;
             border: 3px solid var(--bg-soft);
@@ -375,7 +367,6 @@
         }
         .about-card h3 { font-family: var(--font-display); font-size: 1.1rem; margin-bottom: 16px; }
         .about-card p { color: var(--muted); }
-        .about-card p + p { margin-top: 14px; }
         .about-card.accent p { color: #d8d4f5; }
         .about-card ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
         .about-card li {
@@ -391,7 +382,7 @@
         }
 
         /* ---------- projects ---------- */
-        .project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+        .project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
         .project-card {
             position: relative;
             padding: 28px;
@@ -435,22 +426,18 @@
         }
         .project-stack {
             display: inline-block;
-            max-width: 100%;
             font-family: var(--font-display);
             font-size: 0.78rem;
-            line-height: 1.5;
             color: var(--accent-2);
             padding: 6px 12px;
             border: 1px solid var(--border);
             border-radius: 999px;
             background: rgba(0,0,0,0.2);
-            overflow-wrap: anywhere;
         }
         .pdf-link {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            white-space: nowrap;
             text-decoration: none;
             font-family: var(--font-display);
             font-size: 0.8rem;
@@ -518,10 +505,6 @@
             display: block;
             filter: drop-shadow(0 0 6px rgba(0,0,0,0.4));
         }
-        .tech-ico[src*="github"],
-        .tech-ico[src*="notion"] {
-            filter: invert(1) drop-shadow(0 0 6px rgba(0,0,0,0.4));
-        }
         .tech-dot {
             display: inline-flex;
             align-items: center;
@@ -537,52 +520,6 @@
         /* 로고 이미지가 있으면 모노그램 점은 숨김 (fallback 시 JS가 다시 표시) */
         .tech-ico + .tech-dot { display: none; }
 
-        /* ---------- history ---------- */
-        .history-list {
-            position: relative;
-            display: grid;
-            gap: 14px;
-            list-style: none;
-        }
-        .history-item {
-            display: grid;
-            grid-template-columns: minmax(130px, 0.34fr) 1fr;
-            gap: 18px;
-            padding: 18px 22px;
-            border-radius: 16px;
-            border: 1px solid var(--border);
-            background: var(--surface);
-            transition: transform 0.3s, border-color 0.3s, background 0.3s;
-        }
-        .history-item:hover {
-            transform: translateY(-4px);
-            border-color: var(--border-strong);
-            background: var(--surface-strong);
-        }
-        .history-date {
-            font-family: var(--font-display);
-            font-size: 0.82rem;
-            letter-spacing: 0.08em;
-            color: var(--accent-2);
-        }
-        .history-title {
-            color: var(--text);
-            font-weight: 500;
-        }
-
-        /* ---------- why ---------- */
-        .why-card {
-            padding: 34px;
-            border-radius: 18px;
-            background: linear-gradient(150deg, rgba(124,92,255,0.14), rgba(25,227,192,0.06));
-            border: 1px solid rgba(124,92,255,0.25);
-        }
-        .why-card p {
-            color: #d8d4f5;
-            font-size: 1.02rem;
-        }
-        .why-card p + p { margin-top: 16px; }
-
         /* ---------- contact ---------- */
         .contact-card {
             padding: 52px 44px;
@@ -592,27 +529,17 @@
             text-align: center;
         }
         .contact-card > p { color: #d8d4f5; max-width: 600px; margin: 0 auto 32px; }
-        .contact-card > p:empty { display: none; }
         .contact-list { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
         .contact-list a {
             font-family: var(--font-display);
             text-decoration: none;
             color: var(--text);
             font-size: 0.95rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 13px 18px;
+            padding: 13px 22px;
             border-radius: 12px;
             border: 1px solid var(--border-strong);
             background: rgba(0,0,0,0.25);
             transition: transform 0.25s, background 0.25s, border-color 0.25s, color 0.25s;
-        }
-        .contact-list a span { overflow-wrap: anywhere; }
-        .contact-list svg {
-            width: 19px;
-            height: 19px;
-            flex-shrink: 0;
         }
         .contact-list a:hover {
             transform: translateY(-3px);
@@ -644,7 +571,6 @@
             .hero-grid { grid-template-columns: 1fr; gap: 40px; }
             .about-layout { grid-template-columns: 1fr; }
             .project-grid, .stack-panel { grid-template-columns: 1fr; }
-            .history-item { grid-template-columns: 1fr; gap: 6px; }
             .nav-links {
                 position: fixed;
                 top: 78px; left: 50%;
@@ -683,7 +609,7 @@
 
 <div class="page-shell">
     <nav class="topbar" id="topbar">
-        <div class="brand">GAYEON LEE</div>
+        <div class="brand">YEONIE</div>
         <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
         </button>
@@ -691,8 +617,6 @@
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
             <a href="#stack">Stack</a>
-            <a href="#history">History</a>
-            <a href="#why">Why</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
@@ -700,52 +624,45 @@
     <header class="hero">
         <div class="wrap hero-grid">
             <section class="hero-copy reveal">
-                <p class="eyebrow">BACKEND PORTFOLIO / 2026</p>
-                <h1>사용자의 경험이<br>오래 남을 수 있도록,<br><span class="hl">서비스의 흐름과 구조</span>를<br>함께 고민하는 개발자</h1>
+                <p class="eyebrow">PORTFOLIO / SPRING BOOT / 2026</p>
+                <h1>깔끔한 구현보다<br><span class="hl">기억에 남는 경험</span>을<br>만드는 개발자입니다.</h1>
                 <p class="hero-text">
-                    기능을 빠르게 완성하는 것에 앞서, 사용자가 어떤 흐름으로 서비스를 만나고 기억하게 될지 먼저 생각합니다.
-                    기획의 의도가 안정적인 구조와 자연스러운 사용 경험으로 이어지도록 차분하게 구현하는 백엔드 개발자를 지향합니다.
+                    사용자 관점의 흐름을 먼저 설계하고, 그 위에 안정적인 백엔드와 선명한 인터페이스를 쌓습니다.
+                    이 페이지는 당신의 이름, 프로젝트, 링크만 바꾸면 바로 개인 포트폴리오로 사용할 수 있게 구성했습니다.
                 </p>
                 <div class="hero-actions">
-                    <a class="button primary" href="#projects">View Projects →</a>
-                    <a class="button secondary" href="#contact">Contact</a>
+                    <a class="button primary" href="#projects">프로젝트 보기 →</a>
+                    <a class="button secondary" href="#contact">연락하기</a>
                 </div>
             </section>
 
             <aside class="profile-card reveal">
                 <div class="profile-photo">
+                    <!-- 프로필 사진: src를 본인 이미지 경로로 교체하세요 (예: profile.jpg) -->
                     <img src="profile.jpg" alt="프로필 사진"
                          onerror="this.style.display='none';this.parentElement.classList.add('no-img');">
-                    <span class="profile-initial">이</span>
+                    <span class="profile-initial">Y</span>
                 </div>
                 <div class="profile-name">
-                    <strong>이가연</strong>
+                    <strong>김연</strong>
                     <span>Backend Developer</span>
                 </div>
                 <ul class="profile-info">
                     <li>
-                        <span class="info-label">University</span>
-                        <span class="info-value">한국외국어대학교</span>
-                    </li>
-                    <li>
-                        <span class="info-label">Major</span>
-                        <span class="info-value">컴퓨터공학부</span>
-                    </li>
-                    <li>
-                        <span class="info-label">Birth</span>
-                        <span class="info-value">2003.03.09</span>
-                    </li>
-                    <li>
                         <span class="info-label">MBTI</span>
-                        <span class="info-value">ESTJ</span>
+                        <span class="info-value">INFJ</span>
                     </li>
                     <li>
-                        <span class="info-label">Location</span>
-                        <span class="info-value">Seoul</span>
+                        <span class="info-label">생년월일</span>
+                        <span class="info-value">2002.02.21</span>
                     </li>
                     <li>
-                        <span class="info-label">Email</span>
-                        <span class="info-value">llieeynn137@gmail.com</span>
+                        <span class="info-label">Base</span>
+                        <span class="info-value">Seoul / Remote</span>
+                    </li>
+                    <li>
+                        <span class="info-label">Status</span>
+                        <span class="info-value status-on"><span class="status-dot"></span>협업 가능</span>
                     </li>
                 </ul>
             </aside>
@@ -762,28 +679,16 @@
                 <div class="about-layout">
                     <div class="about-card accent reveal">
                         <p>
-                            저는 기능을 구현하기 전에, 그 기능이 서비스 안에서 어떤 의미를 갖는지 먼저 생각하려고 합니다.
-                        </p>
-                        <p>
-                            단순히 요구사항을 코드로 옮기는 것보다, 사용자가 어떤 흐름으로 서비스를 만나고 어떤 순간에 불편함을 느끼는지 이해하는 과정이 좋은 개발의 시작이라고 생각합니다. 그래서 프로젝트를 진행할 때도 기획 의도를 먼저 파악하고, 그 의도가 실제 화면과 데이터 흐름 속에서 자연스럽게 이어질 수 있도록 구조를 고민합니다.
-                        </p>
-                        <p>
-                            팀 프로젝트에서는 소통의 밀도가 결과물의 완성도를 만든다고 믿습니다. 의견이 다를 때는 빠르게 맞춰보고, 피드백이 생기면 방어적으로 받아들이기보다 더 나은 방향을 찾는 계기로 삼으려 합니다. 완벽하게 시작하는 사람보다는, 부족한 부분을 인정하고 끝까지 채워나가는 사람이 좋은 팀원이 된다고 생각합니다.
-                        </p>
-                        <p>
-                            저는 아직 배워가는 과정에 있지만, 맡은 역할은 책임 있게 완성하려고 노력합니다. 필요한 부분은 스스로 찾아 공부하고, 팀의 속도에 맞춰 움직이며, 서비스가 더 좋은 방향으로 나아갈 수 있다면 제 역할 밖의 고민도 함께 나누는 개발자가 되고 싶습니다.
+                            안녕하세요. 문제를 빠르게 구현하는 것에서 끝나지 않고, 왜 이 기능이 필요한지까지 함께 고민하는 개발자입니다.
+                            실용적인 기술 선택, 읽기 쉬운 코드, 오래 유지할 수 있는 구조를 중요하게 생각합니다.
                         </p>
                     </div>
                     <div class="about-card reveal">
                         <h3>What I Value</h3>
                         <ul>
-                            <li>사용자의 흐름을 먼저 이해하는 개발</li>
-                            <li>기획의 의도를 구조로 옮기는 설계</li>
-                            <li>피드백을 빠르게 반영하는 태도</li>
-                            <li>데이터 흐름을 안정적으로 설계하는 습관</li>
-                            <li>함께 묻고 배우며 성장하는 협업</li>
-                            <li>구현 이후의 경험까지 살피는 책임감</li>
-                            <li>팀의 속도와 분위기를 함께 맞추는 협업</li>
+                            <li>명확한 사용자 경험</li>
+                            <li>유지보수 가능한 구조</li>
+                            <li>기획과 구현 사이의 연결</li>
                         </ul>
                     </div>
                 </div>
@@ -799,59 +704,47 @@
                 <div class="project-grid">
                     <article class="project-card reveal">
                         <p class="project-tag">Project 01</p>
-                        <h3>Spring Boot Session Project</h3>
+                        <h3>Commerce Admin Dashboard</h3>
                         <p>
-                            Spring Boot 기반 백엔드 구조를 학습하고 구현하며, 요청과 응답이 이어지는 서비스의 기본 흐름을 익힌 프로젝트입니다.
-                            각 계층의 역할과 데이터 흐름을 이해하는 데 집중했고, 팀 프로젝트에서 안정적인 백엔드 구조를 고민할 수 있는 기반을 쌓았습니다.
+                            주문, 정산, 재고 흐름을 한 화면에서 볼 수 있도록 설계한 관리자 시스템.
+                            데이터 조회 속도와 운영 편의성을 함께 개선했습니다.
                         </p>
                         <div class="project-foot">
-                            <span class="project-stack">Spring Boot · Java · JPA · MySQL · REST API · GitHub</span>
-                            <a class="pdf-link" href="https://github.com/yeonie0309/SpringSession" target="_blank" rel="noreferrer">
-                                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                                GitHub 보기
-                            </a>
-                        </div>
-                    </article>
-                    <article class="project-card reveal">
-                        <p class="project-tag">Project 02</p>
-                        <h3>Algorithm Study Lead</h3>
-                        <p>
-                            알고리즘 스터디장으로서 꾸준한 문제 풀이와 풀이 공유 문화를 만들었습니다.
-                            문제 해결 과정을 함께 설명하고 기록하며, 참여자들이 지속적으로 성장할 수 있는 학습 흐름을 운영했습니다.
-                        </p>
-                        <div class="project-foot">
-                            <span class="project-stack">Java · Python · Algorithm · Data Structure · Problem Solving · GitHub</span>
-                            <a class="pdf-link" href="https://github.com/yeonie0309/AlgorithmStudy" target="_blank" rel="noreferrer">
-                                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                                GitHub 보기
-                            </a>
-                        </div>
-                    </article>
-                    <article class="project-card reveal">
-                        <p class="project-tag">Project 03</p>
-                        <h3>AI-Based Sleep-Aware Media &amp; Smart Room Control System</h3>
-                        <p>
-                            졸음과 수면 상태를 감지해 미디어와 실내 기기 제어로 연결하는 임베디드 AI 프로젝트입니다.
-                            카메라 기반 얼굴·눈 상태 분석과 모드 선택 흐름을 통해, 사용자의 일상적인 불편을 기술로 줄이는 방식을 고민했습니다.
-                        </p>
-                        <div class="project-foot">
-                            <span class="project-stack">Python · Raspberry Pi · OpenCV · MediaPipe · Face Mesh · IoT</span>
-                            <a class="pdf-link" href="docs/IoTproject.pdf" target="_blank" rel="noreferrer">
+                            <span class="project-stack">Spring Boot / JPA / MySQL</span>
+                            <!-- PDF: href를 업로드한 파일 경로로 교체하세요 -->
+                            <a class="pdf-link" href="docs/project-01.pdf" target="_blank" rel="noreferrer">
                                 <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
                                 PDF 보기
                             </a>
                         </div>
                     </article>
                     <article class="project-card reveal">
-                        <p class="project-tag">Project 04</p>
-                        <h3>Knowledge Distillation 기반 금융 감성 분석 모델 경량화</h3>
+                        <p class="project-tag">Project 02</p>
+                        <h3>Reservation Web Platform</h3>
                         <p>
-                            금융 뉴스 감성 분석을 더 빠르고 가볍게 수행하기 위해 Knowledge Distillation 기반 경량화 모델을 실험했습니다.
-                            고성능 모델의 판단을 작은 모델에 전이하며, 실제 서비스 환경에서 필요한 성능과 효율의 균형을 고민했습니다.
+                            예약 과정의 이탈을 줄이기 위해 단계별 UX를 단순화한 웹 서비스.
+                            사용자 행동 흐름에 맞춰 화면과 API를 함께 설계했습니다.
                         </p>
                         <div class="project-foot">
-                            <span class="project-stack">Python · NLP · Knowledge Distillation · FinBERT · KoELECTRA · Pruning</span>
-                            <a class="pdf-link" href="docs/CapstoneProject.pdf" target="_blank" rel="noreferrer">
+                            <span class="project-stack">Java / REST API / JavaScript</span>
+                            <!-- PDF: href를 업로드한 파일 경로로 교체하세요 -->
+                            <a class="pdf-link" href="docs/project-02.pdf" target="_blank" rel="noreferrer">
+                                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                                PDF 보기
+                            </a>
+                        </div>
+                    </article>
+                    <article class="project-card reveal">
+                        <p class="project-tag">Project 03</p>
+                        <h3>Personal Branding Site</h3>
+                        <p>
+                            프로젝트, 소개, 연락 수단을 한 페이지에 응축한 개인 포트폴리오.
+                            강한 첫인상과 빠른 전달력을 목표로 제작했습니다.
+                        </p>
+                        <div class="project-foot">
+                            <span class="project-stack">Spring Boot / HTML / CSS</span>
+                            <!-- PDF: href를 업로드한 파일 경로로 교체하세요 -->
+                            <a class="pdf-link" href="docs/project-03.pdf" target="_blank" rel="noreferrer">
                                 <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
                                 PDF 보기
                             </a>
@@ -872,14 +765,9 @@
                         <h3>Backend</h3>
                         <div class="tech-list">
                             <span class="tech"><img class="tech-ico" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="" onerror="techFallback(this,'J')"><span class="tech-dot">J</span>Java</span>
-                            <span class="tech"><img class="tech-ico" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="" onerror="techFallback(this,'P')"><span class="tech-dot">P</span>Python</span>
-                            <span class="tech"><img class="tech-ico" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="" onerror="techFallback(this,'C')"><span class="tech-dot">C</span>C</span>
-                            <span class="tech"><img class="tech-ico" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="" onerror="techFallback(this,'C')"><span class="tech-dot">C</span>C++</span>
                             <span class="tech"><img class="tech-ico" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="" onerror="techFallback(this,'S')"><span class="tech-dot">S</span>Spring Boot</span>
                             <span class="tech"><span class="tech-dot">R</span>REST API</span>
                             <span class="tech"><img class="tech-ico" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/hibernate/hibernate-original.svg" alt="" onerror="techFallback(this,'J')"><span class="tech-dot">J</span>JPA</span>
-                            <span class="tech"><img class="tech-ico" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="" onerror="techFallback(this,'M')"><span class="tech-dot">M</span>MySQL</span>
-                            <span class="tech"><span class="tech-dot">O</span>OAuth Login</span>
                         </div>
                     </div>
                     <div class="stack-group reveal">
@@ -888,7 +776,6 @@
                             <span class="tech"><img class="tech-ico" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="" onerror="techFallback(this,'H')"><span class="tech-dot">H</span>HTML</span>
                             <span class="tech"><img class="tech-ico" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="" onerror="techFallback(this,'C')"><span class="tech-dot">C</span>CSS</span>
                             <span class="tech"><img class="tech-ico" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="" onerror="techFallback(this,'J')"><span class="tech-dot">J</span>JavaScript</span>
-                            <span class="tech"><img class="tech-ico" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="" onerror="techFallback(this,'R')"><span class="tech-dot">R</span>React</span>
                             <span class="tech"><span class="tech-dot">R</span>Responsive UI</span>
                         </div>
                     </div>
@@ -896,13 +783,8 @@
                         <h3>Tools</h3>
                         <div class="tech-list">
                             <span class="tech"><img class="tech-ico" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="" onerror="techFallback(this,'G')"><span class="tech-dot">G</span>Git</span>
-                            <span class="tech"><img class="tech-ico" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="" onerror="techFallback(this,'G')"><span class="tech-dot">G</span>GitHub</span>
                             <span class="tech"><img class="tech-ico" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gradle/gradle-original.svg" alt="" onerror="techFallback(this,'G')"><span class="tech-dot">G</span>Gradle</span>
                             <span class="tech"><img class="tech-ico" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg" alt="" onerror="techFallback(this,'I')"><span class="tech-dot">I</span>IntelliJ IDEA</span>
-                            <span class="tech"><img class="tech-ico" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="" onerror="techFallback(this,'V')"><span class="tech-dot">V</span>VSCode</span>
-                            <span class="tech"><img class="tech-ico" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/notion/notion-original.svg" alt="" onerror="techFallback(this,'N')"><span class="tech-dot">N</span>Notion</span>
-                            <span class="tech"><span class="tech-dot">D</span>Discord</span>
-                            <span class="tech"><img class="tech-ico" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg" alt="" onerror="techFallback(this,'S')"><span class="tech-dot">S</span>Slack</span>
                             <span class="tech"><img class="tech-ico" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="" onerror="techFallback(this,'F')"><span class="tech-dot">F</span>Figma</span>
                         </div>
                     </div>
@@ -910,96 +792,28 @@
             </div>
         </section>
 
-        <section class="section" id="history">
-            <div class="wrap">
-                <div class="section-heading reveal">
-                    <p class="section-index">04</p>
-                    <h2>My History</h2>
-                </div>
-                <ul class="history-list">
-                    <li class="history-item reveal">
-                        <span class="history-date">2023.03</span>
-                        <span class="history-title">한국외국어대학교 글로벌캠퍼스 입학</span>
-                    </li>
-                    <li class="history-item reveal">
-                        <span class="history-date">2023.03 ~ 2023.12</span>
-                        <span class="history-title">한국외대 자유전공학부 제 1대 학생회 집행부원</span>
-                    </li>
-                    <li class="history-item reveal">
-                        <span class="history-date">2025.03 ~ 2025.12</span>
-                        <span class="history-title">한국외대 자유전공학부 제 3대 학생회 복지국장</span>
-                    </li>
-                    <li class="history-item reveal">
-                        <span class="history-date">2025.06 ~ ing</span>
-                        <span class="history-title">Algorithm Study Lead</span>
-                    </li>
-                    <li class="history-item reveal">
-                        <span class="history-date">2025.10 ~ 2026.04</span>
-                        <span class="history-title">Spring Boot Session</span>
-                    </li>
-                    <li class="history-item reveal">
-                        <span class="history-date">2026.03 ~ ing</span>
-                        <span class="history-title">UMC 10기 Spring Boot Part</span>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="section" id="why">
-            <div class="wrap">
-                <div class="section-heading reveal">
-                    <p class="section-index">05</p>
-                    <h2>Why 여기도?</h2>
-                </div>
-                <div class="why-card reveal">
-                    <p>
-                        평소에도 문화 경험이 특정 지역에만 집중되는 현상과, 좋은 공간이 있어도 쉽게 발견되지 못한 채 흩어지는 문제에 관심이 있었습니다.
-                    </p>
-                    <p>
-                        여기도는 수도권 중심의 문화 경험을 지역으로 확장하고, 사람들이 전국의 다양한 로컬 문화와 공간을 발견·방문·기록·공유할 수 있도록 돕는 서비스라는 점에서 매력적으로 다가왔습니다.
-                    </p>
-                    <p>
-                        특히 지역만의 경험을 지도 위에 아카이빙하며, 누군가의 기록이 또 다른 사람의 새로운 방문으로 이어지는 구조가 인상 깊었습니다.
-                    </p>
-                    <p>
-                        저는 문화 경험이 특정 도시의 특권이 아닌 모두의 일상이 되도록 만드는 이 흐름에 함께하고 싶습니다.
-                    </p>
-                </div>
-            </div>
-        </section>
-
         <section class="section" id="contact">
             <div class="wrap">
                 <div class="section-heading reveal">
-                    <p class="section-index">06</p>
+                    <p class="section-index">04</p>
                     <h2>Contact</h2>
                 </div>
                 <div class="contact-card reveal">
+                    <p>
+                        아래 정보는 예시입니다. 실제 이메일, GitHub, 블로그 링크로 바꾸면 바로 사용할 수 있습니다.
+                    </p>
                     <div class="contact-list">
-                        <a href="tel:010-8799-7754" aria-label="전화번호 010-8799-7754">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.91.33 1.8.63 2.65a2 2 0 0 1-.45 2.11L8.09 9.69a16 16 0 0 0 6.22 6.22l1.21-1.2a2 2 0 0 1 2.11-.45c.85.3 1.74.51 2.65.63A2 2 0 0 1 22 16.92z"/></svg>
-                            <span>010-8799-7754</span>
-                        </a>
-                        <a href="mailto:llieeynn137@gmail.com" aria-label="메일 llieeynn137@gmail.com">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-                            <span>llieeynn137@gmail.com</span>
-                        </a>
-                        <a href="https://github.com/yeonie0309" target="_blank" rel="noreferrer" aria-label="깃허브 yeonie0309">
-                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5A12 12 0 0 0 8.21 23.9c.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.08 1.83 2.82 1.3 3.51.99.11-.78.42-1.3.76-1.6-2.66-.3-5.46-1.33-5.46-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.4 11.4 0 0 1 6.01 0c2.29-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.62-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .5z"/></svg>
-                            <span>github.com/yeonie0309</span>
-                        </a>
-                        <a href="https://discord.com/" target="_blank" rel="noreferrer" aria-label="디스코드 아이디 llieeynn137">
-                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.32 4.37A19.8 19.8 0 0 0 15.36 2c-.21.38-.46.9-.63 1.3a18.4 18.4 0 0 0-5.49 0A13 13 0 0 0 8.6 2a19.7 19.7 0 0 0-4.96 2.38C.5 9.06-.35 13.62.07 18.12A20 20 0 0 0 6.16 21.2c.49-.67.93-1.38 1.3-2.12-.72-.27-1.41-.6-2.05-.98.17-.13.34-.26.5-.4a14.2 14.2 0 0 0 12.18 0l.5.4c-.65.38-1.33.71-2.06.98.37.74.81 1.45 1.3 2.12a20 20 0 0 0 6.1-3.08c.5-5.21-.84-9.73-3.61-13.75ZM8.02 15.36c-1.19 0-2.16-1.09-2.16-2.43s.95-2.43 2.16-2.43c1.2 0 2.18 1.1 2.16 2.43 0 1.34-.96 2.43-2.16 2.43Zm7.96 0c-1.19 0-2.16-1.09-2.16-2.43s.95-2.43 2.16-2.43c1.2 0 2.18 1.1 2.16 2.43 0 1.34-.95 2.43-2.16 2.43Z"/></svg>
-                            <span>llieeynn137</span>
-                        </a>
+                        <a href="mailto:your.email@example.com">your.email@example.com</a>
+                        <a href="https://github.com/your-github" target="_blank" rel="noreferrer">github.com/your-github</a>
+                        <a href="https://your-site.example.com" target="_blank" rel="noreferrer">your-site.example.com</a>
                     </div>
                 </div>
             </div>
         </section>
 
         <footer class="footer wrap">
-            <div class="brand">GAYEON LEE</div>
-            <span>© 2026 Gayeon Lee. Designed &amp; built with care.</span>
+            <div class="brand">YEONIE</div>
+            <span>© 2026 Yeonie. Designed &amp; built with care.</span>
         </footer>
     </main>
 </div>
@@ -1088,7 +902,6 @@
                 orb.style.marginTop = (dy * depth) + "px";
             });
         });
-
     })();
 </script>
 </body>
